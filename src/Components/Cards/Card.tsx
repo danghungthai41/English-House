@@ -20,25 +20,26 @@ const Card = (props: Props) => {
 
     switch (Math.round(random) + 4) {
       case 1:
-        return "[first]";
+        return "first";
       case 2:
-        return "[second]";
+        return "second";
       case 3:
-        return "[third]";
+        return "third";
       case 4:
-        return "[fourth]";
+        return "fourth";
       case -1:
-        return "[-first]";
+        return "-first";
       case -2:
-        return "[-second]";
+        return "-second";
       case -3:
-        return "[-third]";
+        return "-third";
       case -4:
-        return "[-fourth]";
+        return "-fourth";
       default:
-        return "[zero]";
+        return "zero";
     }
   }, []);
+
   return (
     <Link to={`${pathname}/${props.item}`}>
       <div
