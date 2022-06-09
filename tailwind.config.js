@@ -1,3 +1,20 @@
+const plugin = require("tailwindcss/plugin");
+
+const rotateX = plugin(({ addUtilities }) => {
+  addUtilities({
+    ".rotate-x-180": {
+      transform: "rotateX(180deg)",
+    },
+  });
+});
+
+const rotateY = plugin(({ addUtilities }) => {
+  addUtilities({
+    ".rotate-y-180": {
+      transform: "rotateY(180deg)",
+    },
+  });
+});
 module.exports = {
   important: true,
   // mode: 'jit',
@@ -8,6 +25,10 @@ module.exports = {
       "1/2": "50%",
       70: "70px",
       80: "80px",
+      "100vh": "100vh",
+      550: "550px",
+      600: "600px",
+      660: "660px",
     },
     screens: {
       sm: "384px",
@@ -29,6 +50,7 @@ module.exports = {
       colors: {
         [`yellow-title`]: "#ffd22d",
         [`yellow-card`]: "#FFD165",
+        [`primary-color`]: "#3d405b",
       },
       borderWidth: {
         5: "5px",
@@ -41,6 +63,9 @@ module.exports = {
         84: "336px",
         84: "336px",
         114: "460px",
+      },
+      backgroundImage: {
+        lessonBox: "linear-gradient(209.21deg,#fbb300 13.57%,#1ed0e2 98.38%)",
       },
       // rotate: {
       //   [`[zero]`]: "0deg",
@@ -58,5 +83,5 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [rotateX, rotateY],
 };

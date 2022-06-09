@@ -39,9 +39,9 @@ const Header = (props: Props) => {
   );
 
   return (
-    <div className="h-20 min-h-80 w-100 flex justify-center border-b-1 border-white shadow-lg">
+    <div className="h-16  w-100 flex justify-center border-b-1 border-white shadow-lg bg-[#2B3647] text-white">
       <div className="container flex justify-between items-center h-full">
-        <div className="w-28 mix-blend-darken">
+        <div className="w-28">
           <Button to="/">
             <img src={img.engHouseLogo} alt="" className="w-full h-full" />
           </Button>
@@ -53,7 +53,9 @@ const Header = (props: Props) => {
                 key={index}
                 classNameChild="text-xl"
                 className={`px-5 py-6 ${
-                  pathname === to ? " text-yellow-title border-b-[2px]" : ""
+                  `/${pathname.split("/")[1]}` === to
+                    ? " text-yellow-title border-b-[2px]"
+                    : ""
                 }`}
                 to={to}
               >

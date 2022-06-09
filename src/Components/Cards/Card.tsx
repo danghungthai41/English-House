@@ -1,20 +1,17 @@
-import React, {
-  MouseEvent,
-  useState,
-  useEffect,
-  useTransition,
-  useCallback,
-} from "react";
-import { Link, useLocation, useParams } from "react-router-dom";
+import { Lesson } from "@/Core/Models/Lesson.type";
+import React, { useCallback } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { faLock } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { CardLessonIcon } from "@/Theme/Icon";
+
 interface Props {
-  // onClick: (event: MouseEvent<HTMLDivElement, globalThis.MouseEvent>) => void;
-  item: number;
+  item: Lesson;
 }
 
-const Card = (props: Props) => {
+const Card = ({ item }: Props) => {
   const { pathname } = useLocation();
 
-  
   const randomNum = useCallback(() => {
     let random = Math.random() * (-4 - 4);
 
@@ -41,31 +38,36 @@ const Card = (props: Props) => {
   }, []);
 
   return (
-    <Link to={`${pathname}/${props.item}`}>
+    <Link
+      to={`${pathname}/unit/${item.id}`}
+      className={item.isLock ? `cursor-pointer` : `pointer-events-none`}
+    >
       <div
         className={`w-[194px] h-[253px] border-1 flex flex-col justify-between rounded-lg hover:scale-105 duration-300  bg-yellow-card shadow-card 
-       cursor-pointer rotate-${randomNum()}`}
+       cursor-pointer rotate-${randomNum()} relative`}
       >
-        <div className="p-5 text-2xl text-[#3d405b]">
-          Essential <br />
-          English for IT
+        <div className="p-6 text-2xl text-[#3d405b] ">
+          <span>{item.title}</span>
         </div>
 
         <div className="w-full ">
-          <svg
-            className="sc-7v08c9-9 itVPGs"
-            viewBox="0 0 196 58"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g id="Onboarding" fill="none" fillRule="evenodd">
-              <path
-                d="M0 7.316c29.064-5.713 57.327-8.08 84.788-7.1C122.55 1.561 159.621 7.547 196 18.172v39H0V7.316z"
-                id="Rectangle"
-                fill="#FF9D6F"
-              ></path>
-            </g>
-          </svg>
+          <div className="relative">
+            {item.isLock ? (
+              <CardLessonIcon color="#FF9D6F" />
+            ) : (
+              <CardLessonIcon color="#e5e5e5" />
+            )}
+
+            <p className="absolute top-4 left-6 text-xl ">Lesson {item.id}</p>
+          </div>
         </div>
+        {item.isLock ? (
+          ""
+        ) : (
+          <span className="absolute top-1 left-1">
+            <FontAwesomeIcon icon={faLock} size="lg" />
+          </span>
+        )}
       </div>
     </Link>
   );

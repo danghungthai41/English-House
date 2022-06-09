@@ -12,7 +12,7 @@ const HomePage = (props: Props) => {
       >
         <div className="flex justify-around border-none text-4xl py-6">
           <Button className="">Learning English Effectively</Button>
-          <Button className="bg-[#FFB702] rounded-xl px-16 py-2  ">
+          <Button className="bg-[#FFB702] rounded-xl px-16 py-2" to="/lessons">
             <span className="tracking-[15px] text-3xl ">Start</span>
           </Button>
         </div>

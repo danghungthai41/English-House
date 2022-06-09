@@ -9,7 +9,7 @@ const App: FC = () => {
     <Router>
       <HomeLayout>
         <Routes>
-          <Route path="/lessons/:id" element={<Lesson />}  />
+          <Route path="/lessons/unit/:id" element={<Lesson />}  />
           <Route path="/lessons" element={<Lessons />} />
           <Route path="/" element={<HomePage />} />
         </Routes>

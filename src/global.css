@@ -6,10 +6,10 @@
 
 body {
   font-size: 16px;
-  color: #2b3647;
+  color: #3d405b;
 }
 .container {
-  max-width: 1200px;
+  max-width: 1140px;
   margin: 0 auto;
 }
 
@@ -79,4 +79,17 @@ body {
   -webkit-transform: rotate(-4deg) !important;
   -o-transform: rotate(-4deg) !important;
   -moz-transform: rotate(-4deg) !important;
+}
+
+.abc:hover {
+  transform: rotateY(180deg) !important;
+  -webkit-transform: rotateY(180deg) !important;
+  -moz-transform: rotateY(180deg) !important;
+  -ms-transform: rotateY(180deg) !important;
+  -o-transform: rotateY(180deg) !important;
+  transition: all 0.7s;
+  -webkit-transition: all 0.7s;
+  -moz-transition: all 0.7s;
+  -ms-transition: all 0.7s;
+  -o-transition: all 0.7s;
 }

@@ -1,0 +1,5 @@
+{
+  "name": "LessonsService",
+  "main": "./LessonsService.tsx",
+  "private": true
+}

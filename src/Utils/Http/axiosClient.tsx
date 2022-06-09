@@ -6,19 +6,23 @@ export const axiosClient = axios.create({
   timeout: 8000,
   headers: {
     "Content-Type": "application/json",
-    //   TokenCybersoft: process.env.REACT_APP_TOKEN_CYBERSOFT,
   },
   paramsSerializer: (params) => queryString.stringify(params),
 });
 
-axiosClient.interceptors.request.use((config) => {
-  // if(config.headers){
-
+axiosClient.interceptors.request.use(async (response) => {
+  // if (response.config.headers) {
+  //   const isLoading = response.config.headers.isLoading;
+  //   isLoading && store.dispatch(setRequestSpinnerEnded());
   // }
-  return config;
+
+  if (response && response.data) {
+    return response.data;
+  }
+  return response;
 });
 
-axiosClient.interceptors.response.use(
-  async (response) => {},
-  (error) => {}
-);
+// axiosClient.interceptors.response.use(
+//   async (response) => {},
+//   (error) => {}
+// );
