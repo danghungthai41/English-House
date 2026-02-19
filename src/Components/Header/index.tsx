@@ -1,6 +1,6 @@
 import { useMemo, useState } from "react";
 import img from "@/Theme";
-import Button from "@/Components/Button";
+import {Button} from "@/Components";
 import { useLocation } from "react-router-dom";
 interface Props {}
 
@@ -39,8 +39,8 @@ const Header = (props: Props) => {
   );
 
   return (
-    <div className="h-16  w-100 flex justify-center border-b-1 border-white shadow-lg bg-[#2B3647] text-white">
-      <div className="container flex justify-between items-center h-full">
+    <div className="h-16  w-100 flex justify-center shadow-lg bg-[#2B3647] text-white fixed w-full z-10">
+      <div className="container flex justify-between items-center h-full ">
         <div className="w-28">
           <Button to="/">
             <img src={img.engHouseLogo} alt="" className="w-full h-full" />

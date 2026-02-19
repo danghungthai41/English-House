@@ -1,11 +1,16 @@
 import { useStore } from "@/store";
 import React from "react";
 
-interface Props {}
+type Props = {};
 
 const WordList = (props: Props) => {
- 
-  return <div></div>;
+  const [state, dispatch] = useStore();
+  console.log(state);
+  return (
+    <div>
+      WordList
+    </div>
+  );
 };
 
 export default WordList;

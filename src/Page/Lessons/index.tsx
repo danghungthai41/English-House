@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from "react";
-import Card from "@/Components/Cards/Card";
+import { Card } from "@/Components";
 import axios from "axios";
 import { Lesson } from "@/Core/Models/Lesson.type";
 interface Props {}
@@ -50,3 +50,9 @@ const Lessons: React.FC<Props> = (props) => {
 };
 
 export default Lessons;
+
+
+
+
+
+

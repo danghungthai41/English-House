@@ -6,6 +6,7 @@ interface Props {
   href?: boolean | string;
   className?: string;
   classNameChild?: string;
+  padding?: string;
   children?: React.ReactNode;
   onClick?: (event: Event) => void;
 }
@@ -35,7 +36,7 @@ const Button: React.FC<Props> = ({
 
   const classes = cx(
     className,
-    "text-center border-b-[2px] border-transparent "
+    "border-b-[2px] border-transparent "
   );
   return (
     <Comp className={classes} {...props}>
